@@ -1,0 +1,199 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Roboto, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Kanit, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../images/javelin.jpg");
+  background-size: cover;
+  background-position: top right;
+  height: 50vh;
+  border-top: 1rem solid #4caf50;
+  border-bottom: 2rem solid #4caf50;
+}
+
+header h1 {
+  position: relative;
+  top: 2rem;
+  font-size: 4rem;
+  color: white;
+  background-color: #4caf50;
+  padding: .5rem 4rem;
+  -webkit-clip-path: polygon(2rem 0, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+          clip-path: polygon(2rem 0, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+}
+
+header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 235, 59, 0.2);
+  -webkit-backdrop-filter: grayscale(25%) brightness(120%);
+          backdrop-filter: grayscale(25%) brightness(120%);
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #ffeb3b;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 75%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-links a {
+  display: block;
+  padding: 1rem;
+  color: #222;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.33);
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  height: 2px;
+  background-color: #222;
+  width: 0;
+  -webkit-transition: width .2s;
+  transition: width .2s;
+}
+
+main {
+  width: 75%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+  padding-top: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-left: -2rem;
+  display: inline-block;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: -4rem;
+  bottom: .5rem;
+  height: 3px;
+  z-index: -1;
+  background: #4caf50;
+}
+
+th {
+  text-align: right;
+}
+
+th, td {
+  padding: .25rem;
+}
+
+th {
+  padding-right: 1rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4rem;
+  background: #4caf50;
+  height: 20vh;
+  color: white;
+}
+
+footer em {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Kanit, sans-serif;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
