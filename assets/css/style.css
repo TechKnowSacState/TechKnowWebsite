@@ -139,6 +139,19 @@ h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   margin-left: -2rem;
+  display: inline-block;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: -4rem;
+  bottom: .5rem;
+  height: 3px;
+  z-index: -1;
+  background: #4caf50;
 }
 
 th {
@@ -154,8 +167,33 @@ th {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 4rem;
   background: #4caf50;
   height: 20vh;
+  color: white;
+}
+
+footer em {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Kanit, sans-serif;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

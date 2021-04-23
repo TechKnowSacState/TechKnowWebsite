@@ -126,6 +126,19 @@ h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     margin-left: -2rem;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 2rem;
+        right: -4rem;
+        bottom: .5rem;
+        height: 3px;
+        z-index: -1;
+        background: $javelin-primary;
+    }
 }
 
 th {
@@ -139,7 +152,25 @@ th {
 }
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 4rem;
     background: $javelin-primary;
     height: 20vh;
+    color: white;
+
+    em {
+        font-weight: bold;
+        font-style: normal;
+        font-family: Kanit, sans-serif;
+    }
+    a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
