@@ -1,5 +1,6 @@
 $javelin-primary: #4caf50;
 $javelin-secondary: #ffeb3b;
+$neutral-dark: #222;
 
 * {
     box-sizing: border-box;
@@ -7,8 +8,13 @@ $javelin-secondary: #ffeb3b;
     padding: 0;
 }
 
-body {
+html, body {
     font-family: Roboto, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +43,6 @@ header {
     background-size: cover;
     background-position: top right;
     height: 50vh;
-    margin-bottom: 2rem;
     border-top: 1rem solid $javelin-primary;
     border-bottom: 2rem solid $javelin-primary;
 
@@ -64,6 +69,48 @@ header {
     }
 }
 
+nav {
+    position: sticky;
+    top: -1px;
+    display: flex;
+    background: $javelin-secondary;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    max-width: 1200px;
+    margin: auto;
+
+    a {
+        display: block;
+        padding: 1rem;
+        color: $neutral-dark;
+        transition: background-color .2s;
+        position: relative;
+
+        &:hover {
+            background-color: rgba(white, .33);
+
+            &::before {
+                width: 100%;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 2px;
+            background-color: $neutral-dark;
+            width: 0;
+            transition: width .2s;
+        }
+    }
+}
+
+
 main {
     width: 75%;
     max-width: 1200px;
@@ -71,7 +118,7 @@ main {
 }
 
 section {
-    padding-bottom: 2rem;
+    padding-top: 4rem;
 }
 
 h2 {
