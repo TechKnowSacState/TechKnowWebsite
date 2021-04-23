@@ -53,9 +53,10 @@ header h1 {
   top: 2rem;
   font-size: 4rem;
   color: white;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   background-color: #4caf50;
   padding: .5rem 4rem;
+  -webkit-clip-path: polygon(2rem 0, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+          clip-path: polygon(2rem 0, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
 }
 
 header::before {
@@ -150,5 +151,11 @@ th, td {
 
 th {
   padding-right: 1rem;
+}
+
+footer {
+  margin-top: 4rem;
+  background: #4caf50;
+  height: 20vh;
 }
 /*# sourceMappingURL=style.css.map */
