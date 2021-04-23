@@ -21,6 +21,11 @@ img {
     display: block;
 }
 
+p {
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
 header {
     display: flex;
     position: relative;
@@ -44,7 +49,7 @@ header {
         color: white;
         text-shadow: 0 4px 8px rgba(0, 0, 0, .4);
         background-color: $javelin-primary;
-        padding: 1rem 4rem;
+        padding: .5rem 4rem;
     }
     &::before {
         content: '';
@@ -54,7 +59,33 @@ header {
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($javelin-secondary, .25);
+        background-color: rgba($javelin-secondary, .2);
         backdrop-filter: grayscale(25%) brightness(120%);
     }
+}
+
+main {
+    width: 75%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
+}
+
+th {
+    text-align: right;
+}
+th, td {
+    padding: .25rem;
+}
+th {
+    padding-right: 1rem;
 }
