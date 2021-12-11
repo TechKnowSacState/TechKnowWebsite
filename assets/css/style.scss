@@ -20,6 +20,9 @@ a {
 h1, h2, h3, h4, h5, h6 {
     font-family: Kanit, sans-serif;
 }
+h3 {
+    margin: 1rem 0;
+}
 
 ul {
     margin-left: 4rem;
@@ -51,25 +54,30 @@ header {
     position: relative;
 
     align-items: flex-end;
-    justify-content: center;
 
-    background-image: url('../images/javelin.jpg');
+    background-image: url('../images/phone2.jpg');
     background-size: cover;
-    background-position: top right;
-    height: 50vh;
-    border-top: 1rem solid $javelin-primary;
-    border-bottom: 2rem solid $javelin-primary;
+    background-position: center;
+    height: 75vh;
+    // border-top: 1rem solid $javelin-primary;
+    // border-bottom: 2rem solid $javelin-primary;
 
-
-    h1 {
-        position: relative;
+    h1#javelin-logo {
         top: 2rem;
-        font-size: 4rem;
+        font-size: 5rem;
+        overflow: hidden;
+        width: 100%;
+        padding: 1rem 0;
         color: white;
-        // text-shadow: 0 4px 8px rgba(0, 0, 0, .4);
         background-color: $javelin-primary;
-        padding: .5rem 4rem;
-        clip-path: polygon(2rem 0, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+        // clip-path: polygon(1rem 0, 100% 0%, calc(100% - 1rem) 100%, 0% 100%);
+        box-shadow: 0 -2px 50px rgba(0, 0, 0, .2);
+        background-image: url('../images/project_javelin.png');
+        background-origin: content-box;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
     }
     &::before {
         content: '';
@@ -79,8 +87,8 @@ header {
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($javelin-secondary, .2);
-        backdrop-filter: grayscale(25%) brightness(120%);
+        // background-color: rgba($javelin-secondary, .2);
+        // backdrop-filter: grayscale(25%) brightness(120%);
     }
 }
 
@@ -104,6 +112,7 @@ nav {
         color: $neutral-dark;
         transition: background-color .2s;
         position: relative;
+        transform: translateZ(0);
 
         &:hover {
             background-color: rgba(white, .33);
@@ -134,14 +143,14 @@ main {
 }
 
 section {
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     margin-left: -2rem;
-    display: inline-block;
+    display: table;
     position: relative;
 
     &::after {
@@ -170,14 +179,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 12rem;
     background: $javelin-primary;
-    height: 20vh;
+    min-height: 20vh;
     color: white;
 
-    em {
-        font-weight: bold;
-        font-style: normal;
+    strong {
         font-family: Kanit, sans-serif;
     }
     a {
@@ -190,18 +197,160 @@ footer {
     }
 }
 
+.summary {
+    font-size: 1.5rem;
+    // text-align: center;
+    width: 66.67%;
+    margin: auto;
+}
+
+.cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+
+    .cta-button {
+        display: block;
+        text-align: center;
+        padding: 1rem 3rem;
+        margin: 0 .5rem;
+        border: 2px solid $javelin-primary;
+        border-radius: 4px;
+        color: $javelin-primary;
+        transition: color .2s, background-color .2s;
+
+        &:hover {
+            background: $javelin-primary;
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .summary {
+        width: 100%;
+    }
+
+    .cta {
+        flex-direction: column;
+
+        .cta-button {
+            margin: .5rem 0;
+        }
+    }
+}
+
 .prototype-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6rem 6rem;
+}
+figure img {
+    max-height: 50vh;
+    margin: auto;
 }
 figcaption {
     margin-top: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+@media (max-width: 1200px) {
+    figcaption {
+        font-size: 1.2rem;
+    }
+    .prototype-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
 }
 
-@media (max-width: 1400px) {
-    .prototype-grid {
-        grid-template-columns: repeat(3, 1fr);
+.demo-vid {
+    $width: 66.67%;
+
+    position: relative;
+    width: $width;
+    padding-top: (9 / 16) * $width;
+    margin: auto;
+    margin-top: 6rem;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#techknow-logo {
+    background-image: url("../images/techknow.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    text-indent: -9999px;
+    overflow: hidden;
+    font-size: 3rem;
+}
+.team-roster {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    width: 66.67%;
+    margin: 3rem auto;
+}
+.team-member {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 50px #f4f4f4 inset;
+    padding: 1rem;
+    border-radius: 4px;
+
+    img {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .team-roster {
+        width: 100%;
+    }
+    .team-member {
+        flex-direction: column;
+
+        img {
+            margin: 0;
+        }
+    }
+}
+
+.technologies {
+    display: flex;
+    column-gap: 1rem;
+
+    .tech-category {
+        flex: 1;
+        box-shadow: 0 0 50px #f6f6f6 inset;
+        border-radius: 4px;
+        padding: 1rem;
+
+        h3 {
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+        ul {
+            margin-left: 2rem;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .technologies {
+        flex-direction: column;
+        row-gap: 1rem;
     }
 }
 
